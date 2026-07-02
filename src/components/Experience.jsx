@@ -20,13 +20,13 @@ const INDUSTRIAL_TRAINING = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-gradient-to-br from-green-50 to-emerald-100 dark:from-slate-900 dark:to-slate-800">
+    <section id="experience" className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+        <div className="text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
             Industrial <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600">Training</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mx-auto"></div>
+          <div className="mx-auto mt-5 h-1.5 w-24 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full"></div>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -109,7 +109,7 @@ export default function Experience() {
                   {['Building Surveying', 'Technical Reporting', 'Data Analysis', 'Property Assessment', 'Team Collaboration', 'Problem Solving'].map((skill, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-smfont-medium rounded-full hover:shadow-glow transition-all duration-300 cursor-default"
+                      className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-medium rounded-full hover:shadow-glow transition-all duration-300 cursor-default"
                     >
                       {skill}
                     </span>

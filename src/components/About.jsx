@@ -73,9 +73,9 @@ function AnimatedCounter({ number, suffix }) {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <section id="about" className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Image */}
           <div className="relative animate-slide-in-left">
             <div className="relative">
@@ -101,10 +101,10 @@ export default function About() {
           {/* Right side - Content */}
           <div className="space-y-8 animate-slide-in-right">
             <div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">
                 About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accentPurple">Me</span>
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-primary to-accentPurple rounded-full"></div>
+              <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-accentPurple rounded-full"></div>
             </div>
 
             <div className="prose prose-lg text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -118,7 +118,7 @@ export default function About() {
             {/* Animated Statistics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8">
               {STATS.map((stat, index) => (
-                <div key={index} className="text-center p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
+                <div key={index} className="text-center p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/60 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
                   <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accentPurple mb-2">
                     <AnimatedCounter number={stat.number} suffix={stat.suffix} />
                   </div>

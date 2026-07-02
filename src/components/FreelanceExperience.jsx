@@ -25,13 +25,13 @@ const FREELANCE_EXPERIENCE = {
 
 export default function FreelanceExperience() {
   return (
-    <section id="freelance-experience" className="py-24 bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800">
+    <section id="freelance-experience" className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-white to-indigo-50 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+        <div className="text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
             Freelance <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-600">Experience</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full mx-auto"></div>
+          <div className="mx-auto mt-5 h-1.5 w-24 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full"></div>
         </div>
 
         <div className="max-w-4xl mx-auto">

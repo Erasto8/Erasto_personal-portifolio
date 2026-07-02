@@ -14,20 +14,20 @@ const INTERESTS = [
 
 export default function Interests() {
   return (
-    <section id="interests" className="py-24 bg-gradient-to-br from-amber-50 to-orange-100 dark:from-slate-900 dark:to-slate-800">
+    <section id="interests" className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-amber-50 to-orange-100 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+        <div className="text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Interests</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full mx-auto"></div>
+          <div className="mx-auto mt-5 h-1.5 w-24 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {INTERESTS.map((interest, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 animate-slide-up cursor-default"
+              className="group bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700/60 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-default"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={`w-16 h-16 bg-gradient-to-br ${interest.color} rounded-2xl flex items-center justify-center text-white shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300`}>

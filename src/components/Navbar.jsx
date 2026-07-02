@@ -1,32 +1,43 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTheme } from '../context/ThemeContext.jsx'
 
 const NAV_ITEMS = [
   { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
   { href: '#education', label: 'Education' },
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
-  { href: '#portfolio', label: 'Portfolio' },
-  { href: '#services', label: 'Services' },
+  { href: '#featured-project', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
   const { isDark, toggleTheme } = useTheme()
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handleNavClick = () => setOpen(false)
 
   return (
     <>
-      <nav className="navbar fixed top-0 w-full z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[72px]">
+      <nav className={`navbar fixed top-0 w-full z-50 ${scrolled ? 'scrolled' : ''}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-[72px]">
             <a
-              className="font-bold text-white text-lg tracking-tight"
+              className="font-bold text-white text-lg tracking-tight flex items-center gap-2"
               href="#home"
             >
-              Erasto
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accentPurple text-white text-sm font-extrabold">
+                E
+              </span>
+              <span>Erasto</span>
             </a>
 
             {/* Desktop nav */}
@@ -43,21 +54,22 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               <button
                 id="themeToggle"
                 onClick={toggleTheme}
-                aria-label="Toggle theme"
-                className="w-9 h-9 flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200"
+                aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                className="w-10 h-10 flex items-center justify-center rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors duration-200"
               >
                 <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
               </button>
 
               <button
-                className="lg:hidden w-9 h-9 flex items-center justify-center text-white/60 hover:text-white transition-colors duration-200"
+                className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors duration-200"
                 type="button"
                 onClick={() => setOpen((o) => !o)}
                 aria-label="Toggle navigation"
+                aria-expanded={open}
               >
                 <svg
                   className="w-5 h-5"
@@ -100,7 +112,7 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       <div
-        className={`fixed top-[72px] left-0 right-0 z-40 lg:hidden border-b transition-all duration-300 ${
+        className={`fixed top-16 left-0 right-0 z-40 lg:hidden border-b shadow-xl transition-all duration-300 ${
           open
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-2 pointer-events-none'
@@ -110,14 +122,12 @@ export default function Navbar() {
           borderColor: 'var(--border)',
         }}
       >
-        <ul className="max-w-6xl mx-auto px-4 py-3 space-y-1">
+        <ul className="max-w-7xl mx-auto px-4 py-4 space-y-1">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
               <a
-                className="block px-3 py-2.5 text-sm font-medium transition-colors duration-200"
+                className="block px-4 py-3 rounded-xl text-sm font-medium transition-colors duration-200 hover:bg-primary/10"
                 style={{ color: 'var(--text-secondary)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
                 href={item.href}
                 onClick={handleNavClick}
               >

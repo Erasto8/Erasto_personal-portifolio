@@ -32,13 +32,13 @@ const ONLINECV_PROJECT = {
 
 export default function FeaturedProject() {
   return (
-    <section id="featured-project" className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <section id="featured-project" className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+        <div className="text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accentPurple">Project</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accentPurple rounded-full mx-auto"></div>
+          <div className="mx-auto mt-5 h-1.5 w-24 bg-gradient-to-r from-primary to-accentPurple rounded-full"></div>
         </div>
 
         <div className="max-w-5xl mx-auto">

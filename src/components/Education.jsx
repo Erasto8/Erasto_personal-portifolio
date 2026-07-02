@@ -31,13 +31,13 @@ const EDUCATION = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <section id="education" className="py-20 sm:py-24 lg:py-28 bg-gradient-to-br from-white to-slate-100 dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+        <div className="text-center mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
             Education <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accentPurple">Journey</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent-purple rounded-full mx-auto"></div>
+          <div className="mx-auto mt-5 h-1.5 w-24 bg-gradient-to-r from-primary to-accentPurple rounded-full"></div>
         </div>
 
         <div className="relative">
@@ -57,7 +57,7 @@ export default function Education() {
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-primary to-accentPurple rounded-full border-4 border-white dark:border-slate-800 shadow-glow hidden lg:block z-10"></div>
 
                 <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12'}`}>
-                  <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
+                  <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 border border-slate-100 dark:border-slate-700/60 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
                     <div className="flex items-start gap-6">
                       {/* Logo */}
                       <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${edu.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
